@@ -1,41 +1,47 @@
-///////////////Menu Items (MVP)///////////////////
+// ///////////////Menu Items (MVP)///////////////////
 
-const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const burger = {name: "Burger", price: 18, category: "Lunch"};
-const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
+// const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
+// const burger = {name: "Burger", price: 18, category: "Lunch"};
+// const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
-/* Task 1a: write a function to return more menu items with the same format as the items above. */
+// /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, price, category){
- console.log(Object.this) 
- return {name, price, category}
+// function createMenuItem(name, price, category){
+ 
+//  return {name, price, category}
 
-}
+// }
+// console.log(createMenuItem('S.O.S.', 1.5, 'Breakfast'))
 
-/* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
+// /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
 
-createMenuItem('Chicken Pot Pie', 5, 'Dinner')
-createMenuItem('Whoopie Pie', .5, 'Snacks')
-createMenuItem('Pigeon', 2, 'Entree')
+// createMenuItem('Chicken Pot Pie', 5, 'Dinner')
+// createMenuItem('Pigeon', 2, 'Entree')
+// createMenuItem('Whoopie Pie', .5, 'Snacks')
 
 
-/* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
-Your method should accept: 
+// /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
-(1) A string (teacher, student, or public)
+// Your method should accept: 
 
-and should return a number. 
+// (1) A string (teacher, student, or public)
 
-For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+// and should return a number. 
 
-discount function(string){
-  if string.toLowercase === 'teacher' || is string === 'student' (newPrice = burger.price * .75)
-  else (newPrice = burger.price * .9)
-  return newPrice
-}
+// For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
-///////////////Reviews (MVP)///////////////////
+
+//  burger.discount = function(person){
+//    if (person ==='teacher' || person === 'student'){
+//      return this.price * .75}
+//      else return this.price * .9
+//    }
+ 
+//  console.log(burger.discount('public'))
+//  console.log(burger.discount('teacher'))
+
+// ///////////////Reviews (MVP)///////////////////
 
 const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
     {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
@@ -49,11 +55,30 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 
 /* Task 3: Console.log just Julius' feedback */
 
+// console.log(reviews[5].feedback)
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+reviews.unshift(
+	"Matt",
+	1,
+	`Only thing worse than the food was the diarrhea .  Won't be back`
+);
+
+/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"*/
+
+
+
+
+
+for (let i=0; i<reviews.length; i++){
+if  (reviews[i].name === "Reyna") {reviews[i].splice = "this place is chill with really cool people, great for getting work done on weekdays"}
+else console.log('not her')
+}
+console.log(reviews)
+
+
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
@@ -67,14 +92,17 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * For example, if getReviewByIndex is invoked with reviews and the number 0
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
-function getReviewByIndex(reviews, index) {
-    /* code here */
-  }
+function getReviewByIndex(array, index) {
+    
+  return  `${array[index].name} gave the restaurant a ${array[index].rating}, and their feedback was: ${array[index].feedback}` 
   
+  };
+
+  console.log(getReviewByIndex(reviews,2))
 
 /* Task 7: Write a function to get information about the most recent review called `getLastReview`
 
-getLastReview should accept:
+getLastReview should accept:    
   (1) an array of objects 
   
 and should return a string in the format `name} gave the restaurant a {rating}, and their feedback was: {feedback}`
